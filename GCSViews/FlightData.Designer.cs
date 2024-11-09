@@ -47,8 +47,11 @@ namespace MissionPlanner.GCSViews
             this.quickView2 = new MissionPlanner.Controls.QuickView();
             this.quickView1 = new MissionPlanner.Controls.QuickView();
             this.tabActions = new System.Windows.Forms.TabPage();
+            this.tabMain = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.BUT_SendMSG = new MissionPlanner.Controls.MyButton();
+            this.BUT_Main_1 = new MissionPlanner.Controls.MyButton();
             this.BUT_abortland = new MissionPlanner.Controls.MyButton();
             this.modifyandSetLoiterRad = new MissionPlanner.Controls.ModifyandSet();
             this.BUT_clear_track = new MissionPlanner.Controls.MyButton();
@@ -253,7 +256,9 @@ namespace MissionPlanner.GCSViews
             this.contextMenuStripQuickView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceQuickTab)).BeginInit();
             this.tabActions.SuspendLayout();
+            this.tabMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanelMain.SuspendLayout();
             this.tabPagemessages.SuspendLayout();
             this.tabActionsSimple.SuspendLayout();
             this.tabPagePreFlight.SuspendLayout();
@@ -566,6 +571,7 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions.ContextMenuStrip = this.contextMenuStripactionstab;
             this.tabControlactions.Controls.Add(this.tabQuick);
             this.tabControlactions.Controls.Add(this.tabActions);
+            this.tabControlactions.Controls.Add(this.tabMain);
             this.tabControlactions.Controls.Add(this.tabPagemessages);
             this.tabControlactions.Controls.Add(this.tabActionsSimple);
             this.tabControlactions.Controls.Add(this.tabPagePreFlight);
@@ -725,6 +731,34 @@ namespace MissionPlanner.GCSViews
             this.quickView1.numberformat = "0.00";
             this.toolTip1.SetToolTip(this.quickView1, resources.GetString("quickView1.ToolTip"));
             this.quickView1.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
+
+            //////////////////////////// TODO
+            //
+            // tabMain
+            // 
+            this.tabMain.Controls.Add(this.tableLayoutPanelMain);
+            resources.ApplyResources(this.tabMain, "tabMain");
+            this.tabMain.Name = "tabMain";
+            this.tabMain.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelMain
+            // 
+            resources.ApplyResources(this.tableLayoutPanelMain, "tableLayoutPanelMain");
+            this.tableLayoutPanelMain.Controls.Add(this.BUT_Main_1, 0, 0);
+            this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
+            // 
+            // BUT_Main_1
+            // 
+            this.BUT_Main_1.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_Main_1.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_Main_1.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_Main_1, "BUT_Main_1");
+            this.BUT_Main_1.Name = "BUT_Main_1";
+            this.toolTip1.SetToolTip(this.BUT_Main_1, resources.GetString("BUT_Main_1.ToolTip"));
+            this.BUT_Main_1.UseVisualStyleBackColor = true;
+            this.BUT_Main_1.Click += new System.EventHandler(this.BUT_Main_Click);
+
+
             // 
             // tabActions
             // 
@@ -862,7 +896,7 @@ namespace MissionPlanner.GCSViews
             0,
             0});
             this.modifyandSetAlt.Maximum = new decimal(new int[] {
-            10000,
+            1000,
             0,
             0,
             0});
@@ -2843,6 +2877,7 @@ namespace MissionPlanner.GCSViews
             this.contextMenuStripQuickView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceQuickTab)).EndInit();
             this.tabActions.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPagemessages.ResumeLayout(false);
@@ -2897,7 +2932,7 @@ namespace MissionPlanner.GCSViews
 
         }
 
-  
+
 
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Timer ZedGraphTimer;
@@ -2929,6 +2964,7 @@ namespace MissionPlanner.GCSViews
         public System.Windows.Forms.TabPage tabGauges;
         public System.Windows.Forms.TabPage tabStatus;
         public System.Windows.Forms.TabPage tabActions;
+        public System.Windows.Forms.TabPage tabMain;
         public System.Windows.Forms.TabPage tabTLogs;
         private System.Windows.Forms.ComboBox CMB_modes;
         private Controls.MyButton BUT_setmode;
@@ -3083,6 +3119,7 @@ namespace MissionPlanner.GCSViews
         private System.Windows.Forms.ToolStripMenuItem poiatcoordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flyToCoordsToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStripMenuItem setBatteryCellCountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undockToolStripMenuItem;
@@ -3105,6 +3142,7 @@ namespace MissionPlanner.GCSViews
         private ToolStripMenuItem showIconsToolStripMenuItem;
         private ToolStripMenuItem multiLineToolStripMenuItem;
         private Controls.MyButton BUT_SendMSG;
+        private Controls.MyButton BUT_Main_1;
         public Panel panel_persistent;
         public System.Windows.Forms.TabPage tabAuxFunction;
         private FlowLayoutPanel flowLayoutPanel1;

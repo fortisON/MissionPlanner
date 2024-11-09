@@ -51,6 +51,7 @@ namespace MissionPlanner.Utilities
         public Boolean displayQuickTab { get; set; }
         public Boolean displayPreFlightTab { get; set; }
         public Boolean displayAdvActionsTab { get; set; }
+        public Boolean displayAdvMainTab { get; set; }
         public Boolean displaySimpleActionsTab { get; set; }
         public Boolean displayGaugesTab { get; set; }
         public Boolean displayStatusTab { get; set; }
@@ -146,6 +147,7 @@ namespace MissionPlanner.Utilities
             displayQuickTab = true;
             displayPreFlightTab = true;
             displayAdvActionsTab = false;
+            displayAdvMainTab = true;
             displaySimpleActionsTab = true;
             displayGaugesTab = true;
             displayStatusTab = false;
@@ -233,7 +235,7 @@ namespace MissionPlanner.Utilities
                 {
                     try
                     {
-                        result = (DisplayView) serializer.Deserialize(reader);
+                        result = (DisplayView)serializer.Deserialize(reader);
                         return true;
                     }
                     catch (Exception)
@@ -279,6 +281,7 @@ namespace MissionPlanner.Utilities
                 displayQuickTab = true,
                 displayPreFlightTab = true,
                 displayAdvActionsTab = false,
+                displayAdvMainTab = true,
                 displaySimpleActionsTab = true,
                 displayGaugesTab = true,
                 displayStatusTab = false,
@@ -366,6 +369,7 @@ namespace MissionPlanner.Utilities
                 displayQuickTab = true,
                 displayPreFlightTab = true,
                 displayAdvActionsTab = true,
+                displayAdvMainTab = true,
                 displaySimpleActionsTab = false,
                 displayGaugesTab = true,
                 displayStatusTab = true,
