@@ -226,6 +226,8 @@ namespace MissionPlanner.GCSViews
             {11, "<3m" }
         };
 
+        private bool transponderNeverConnected = true;
+
         public FlightData()
         {
             log.Info("Ctor Start");
